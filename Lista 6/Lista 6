@@ -1,0 +1,15 @@
+Nome da Base de Dados e URL:
+Nome: Iris Dataset
+Atributos ou Características da Base de Dados:
+A base de dados Iris possui 150 instâncias com 4 atributos:
+Comprimento da Sépala (Sepal Length): medido em centímetros (numérico).
+Largura da Sépala (Sepal Width): medido em centímetros (numérico).
+Comprimento da Pétala (Petal Length): medido em centímetros (numérico).
+Largura da Pétala (Petal Width): medido em centímetros (numérico).
+Classes ou Categorias:
+A base de dados contém três classes (categorias de flores):
+Iris Setosa
+Iris Versicolor
+Iris Virginica
+Cada classe contém 50 instâncias.
+Breve Descrição da Base de Dados: A base de dados Iris é uma das mais conhecidas e utilizadas no campo de aprendizado de máquina. Criada por Ronald Fisher em 1936, contém medições de quatro atributos (comprimento e largura das sépalas e pétalas) para três espécies de flores de íris (Setosa, Versicolor, e Virginica). O objetivo principal ao utilizar essa base de dados é desenvolver modelos preditivos capazes de classificar uma flor de íris com base nas características mencionadas.
