@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+
 # d) Importe o método Perceptron de sklearn.linear_mode
 from sklearn.linear_model import Perceptron
 from sklearn.metrics import accuracy_score, confusion_matrix

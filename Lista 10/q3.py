@@ -1,11 +1,9 @@
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import Perceptron
+
 from sklearn.metrics import accuracy_score, confusion_matrix
-from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
-
 from sklearn.naive_bayes import GaussianNB
 
 # a) Criar um classificar a partir de dados aleatórios ,  utilize o método make_classification para gerar uma base de dados

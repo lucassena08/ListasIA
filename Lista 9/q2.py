@@ -10,10 +10,7 @@ print(X)
 print("\n")
 print(y)
 
-### NAO COMPILA
-# X, y = make_classification(n_samples=1000, n_features=3, n_classes=4, random_state=42)
+X, y = make_classification(n_samples=1000, n_features=4, n_classes=3, n_clusters_per_class=1)
 
-# print(X, "\n")
-# print(y, "\n")
-
-## Fica complicado prosseguir para as proximas letras ja que n consegui inicializar o codigo acima.
+print(X, "\n")
+print(y, "\n")
