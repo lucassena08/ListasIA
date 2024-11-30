@@ -12,10 +12,8 @@ Original file is located at
 #pip install packaging
 #pip install networkx
 #pip install matplotlib
-#pip install pandas
 
 import numpy as np
-import pandas as pd
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 
@@ -38,19 +36,19 @@ gorjeta['alta'] = fuzz.trimf(gorjeta.universe, [13, 25, 25])
 
 # visualização das funções de pertinência
 #qualidade['boa'].view()
-# qualidade.view()
-# servico.view()
+qualidade.view()
+servico.view()
 
-# gorjeta.view()
+gorjeta.view()
 
 # Regras
 regra1 = ctrl.Rule(qualidade['ruim'] | servico['ruim'], gorjeta['baixa'])
 regra2 = ctrl.Rule(servico['aceitável'], gorjeta['media'])
 regra3 = ctrl.Rule(servico['ótimo'] | qualidade['saborosa'], gorjeta['alta'])
 
-# regra1.view()
-# regra2.view()
-# regra3.view()
+regra1.view()
+regra2.view()
+regra3.view()
 
 """Criação do sistema de controle e simulação"""
 
@@ -60,9 +58,8 @@ sistema_fuzzy = ctrl.ControlSystemSimulation(regras)
 """Exemplo: taxa de qualidade 6.5 de 10 e serviço 9.8 de 10."""
 
 # Testando
-# 2.2) c) output: 6.586329729276677
-sistema_fuzzy.input['qualidade'] = 0.5
-sistema_fuzzy.input['servico'] = 0.5
+sistema_fuzzy.input['qualidade'] = 6.5
+sistema_fuzzy.input['servico'] = 9.8
 
 # Computando
 sistema_fuzzy.compute()
@@ -73,36 +70,11 @@ sistema_fuzzy.compute()
 """
 
 print (sistema_fuzzy.output['gorjeta'])
-#gorjeta.view(sim=sistema_fuzzy)
+gorjeta.view(sim=sistema_fuzzy)
 
 """Referência:
 
 https://scikit-fuzzy.readthedocs.io/en/latest/auto_examples/plot_tipping_problem_newapi.html
 """
 
-print()
-
-print("2.1)", "\n")
-
-data = {
-    "Amostra": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    "A": [0.5, 1.0, 0.6, 1.0, 0.4, 0.7, 0.5, 0.3, 0.7, 0.0],
-    "B": [0.7, 0.4, 0.5, 0.0, 0.3, 0.8, 1.0, 0.8, 0.6, 0.5],
-}
-
-df = pd.DataFrame(data)
-
-df["A ∩ B"] = df[["A", "B"]].min(axis=1)
-df["A ∪ B"] = df[["A", "B"]].max(axis=1)
-df["A'"] = 1 - df["A"]
-
-print(df)
-
-print("2.2)", "\n")
-print("a)", "\n")
-gorjeta['baixa'] = fuzz.sigmf(gorjeta.universe, 5, -1)
-gorjeta['media'] = fuzz.gaussmf(gorjeta.universe, 10, 3)
-gorjeta['alta'] = fuzz.pimf(gorjeta.universe, 10, 20, 25, 50)
-
-print("b)", "\n")
-# gorjeta.view() # rodar `jupyter lab` no terminal e rodar o codigo ou abrir o systema_fuzzy.ipynb no `vscode`
+input()

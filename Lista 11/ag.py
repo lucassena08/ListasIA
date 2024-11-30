@@ -22,7 +22,8 @@ def funcao_de_fitness(x):
     # maximizar o função objetivo
     # x**2 + 3*y  + 4
 
-    return (x[0] ** 2.0) + (3 * x[1] ) +  4
+    # considerando x[0] == x e x[1] == y
+    return (x[0] ** 3.0) + (2 * x[1] ) + 3
 
 
 # converte bitstring para numero real
@@ -175,10 +176,10 @@ def algoritmo_genetico(funcao_de_fitness, limites, n_bits, n_iter, n_populacao, 
 limites = [[0.0, 51], [10.0, 51]]
 
 # define the total iterations
-n_iter = 150
+n_iter = 500
 
 # quantidade de bits por atributo
-n_bits =8 
+n_bits = 8 
 
 # tamanho da população
 n_populacao = 100
@@ -197,8 +198,21 @@ melhor_individuo, avaliacao = algoritmo_genetico (
 
 # print("Melhor individuo: ",melhor_individuo,  decode(limites, n_bits,best), "=", avaliacao)
 
+print()
+
+
+print("1.2)", "\n")
 
 individuo_real = bit2real(limites, n_bits, melhor_individuo)
 
-print()
-print("f( %s ) = %f" % (individuo_real, avaliacao))
+print("f( %s ) = %f" % (individuo_real, avaliacao), "\n")
+
+print("1.3)", "\n")
+
+n_populacao = 50
+n_bit = 6
+limites = [[1.5, 20], [10.0, 30]]
+
+individuo_real = bit2real(limites, n_bits, melhor_individuo)
+
+print("f( %s ) = %f" % (individuo_real, avaliacao), "\n")
